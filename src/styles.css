@@ -2,23 +2,24 @@
 
 :root {
   --color-primary: #1c1917;
-  --color-on-primary: #ffffff;
-  --color-secondary: #44403c;
-  --color-accent: #a16207;
-  --color-background: #fafaf9;
-  --color-foreground: #0c0a09;
-  --color-muted: #e8ecf0;
-  --color-border: #d6d3d1;
-  --color-sage: #46675c;
-  --color-berry: #6f263d;
-  --color-glass: rgba(255, 255, 255, 0.2);
-  --color-glass-strong: rgba(255, 255, 255, 0.72);
-  --shadow-soft: 0 24px 70px rgba(28, 25, 23, 0.18);
-  --shadow-card: 0 18px 44px rgba(28, 25, 23, 0.12);
+  --color-on-primary: #fff8ec;
+  --color-secondary: #d7c8b9;
+  --color-accent: #b86f05;
+  --color-background: #090706;
+  --color-foreground: #f8f2ea;
+  --color-muted: #1b1512;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-sage: #6f927f;
+  --color-berry: #e5a1b4;
+  --color-glass: rgba(255, 255, 255, 0.12);
+  --color-glass-strong: rgba(255, 255, 255, 0.18);
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.46);
+  --shadow-card: 0 18px 44px rgba(0, 0, 0, 0.34);
   --radius-card: 8px;
   --section-pad: 112px;
   color: var(--color-foreground);
   background: var(--color-background);
+  color-scheme: dark;
   font-family: "Karla", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   font-synthesis: none;
@@ -40,8 +41,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    linear-gradient(135deg, rgba(70, 103, 92, 0.12), transparent 35%),
-    linear-gradient(215deg, rgba(111, 38, 61, 0.12), transparent 42%),
+    radial-gradient(circle at 16% 18%, rgba(111, 146, 127, 0.18), transparent 30%),
+    radial-gradient(circle at 86% 52%, rgba(184, 111, 5, 0.14), transparent 34%),
+    linear-gradient(180deg, #120c09 0%, #090706 42%, #0f0b09 100%),
     var(--color-background);
 }
 
@@ -51,10 +53,10 @@ body::before {
   z-index: -1;
   pointer-events: none;
   content: "";
-  opacity: 0.42;
+  opacity: 0.34;
   background-image:
-    linear-gradient(rgba(28, 25, 23, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28, 25, 23, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(255, 248, 236, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 248, 236, 0.045) 1px, transparent 1px);
   background-size: 52px 52px;
   mask-image: linear-gradient(to bottom, transparent, black 18%, black 72%, transparent);
 }
@@ -98,7 +100,7 @@ img {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: var(--radius-card);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.12));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
   box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.52);
   backdrop-filter: blur(22px) saturate(145%);
 }
@@ -109,9 +111,9 @@ img {
   z-index: 0;
   pointer-events: none;
   content: "";
-  opacity: 0.3;
+  opacity: 0.22;
   filter: url("#liquid-glass-distortion");
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .glass-shine {
@@ -174,8 +176,9 @@ img {
   height: 36px;
   place-items: center;
   border-radius: 50%;
-  color: var(--color-primary);
-  background: rgba(255, 255, 255, 0.88);
+  color: #f4d089;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(18, 12, 9, 0.82);
 }
 
 .desktop-nav {
@@ -211,14 +214,15 @@ img {
   gap: 8px;
   padding: 0 18px;
   border-radius: 999px;
-  color: var(--color-primary);
-  background: rgba(255, 255, 255, 0.9);
+  color: #fff8ec;
+  border: 1px solid rgba(244, 208, 137, 0.34);
+  background: rgba(184, 111, 5, 0.28);
   font-weight: 700;
   transition: transform 180ms ease, background 180ms ease;
 }
 
 .header-action:hover {
-  background: #fff;
+  background: rgba(184, 111, 5, 0.42);
   transform: translateY(-1px);
 }
 
@@ -343,12 +347,12 @@ h1 {
 
 h2 {
   margin-bottom: 20px;
-  color: var(--color-primary);
+  color: var(--color-foreground);
   font-size: 3.4rem;
 }
 
 h3 {
-  color: var(--color-primary);
+  color: var(--color-foreground);
   font-size: 1.15rem;
   line-height: 1.25;
 }
@@ -449,7 +453,9 @@ h3 {
 .ticker {
   overflow: hidden;
   color: #fff;
-  background: var(--color-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0c0908;
 }
 
 .ticker div {
@@ -489,7 +495,7 @@ h3 {
 }
 
 .section-heading p:last-child {
-  color: var(--color-secondary);
+  color: rgba(248, 242, 234, 0.82);
   font-size: 1.08rem;
   line-height: 1.75;
 }
@@ -509,22 +515,25 @@ h3 {
 .menu-card {
   overflow: hidden;
   min-height: 420px;
-  border: 1px solid rgba(28, 25, 23, 0.08);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
-  background: rgba(255, 255, 255, 0.78);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035)),
+    rgba(18, 13, 10, 0.94);
   box-shadow: var(--shadow-card);
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .menu-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 24px 58px rgba(28, 25, 23, 0.16);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.46);
 }
 
 .menu-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .menu-card-body {
@@ -554,14 +563,14 @@ h3 {
 }
 
 .menu-card p {
-  color: var(--color-secondary);
+  color: rgba(248, 242, 234, 0.78);
   line-height: 1.65;
 }
 
 .story-section {
   background:
-    linear-gradient(90deg, rgba(70, 103, 92, 0.12), transparent 48%),
-    #fff;
+    linear-gradient(90deg, rgba(111, 146, 127, 0.16), transparent 48%),
+    linear-gradient(180deg, #0c0908, #100b09);
 }
 
 .story-layout {
@@ -586,7 +595,7 @@ h3 {
 }
 
 .story-copy > p:not(.eyebrow) {
-  color: var(--color-secondary);
+  color: rgba(248, 242, 234, 0.82);
   font-size: 1.08rem;
   line-height: 1.8;
 }
@@ -602,9 +611,11 @@ h3 {
   grid-template-columns: 48px 1fr;
   gap: 14px;
   padding: 18px;
-  border: 1px solid rgba(28, 25, 23, 0.08);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
-  background: rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035)),
+    rgba(19, 14, 12, 0.88);
 }
 
 .ritual-item span {
@@ -613,8 +624,9 @@ h3 {
   height: 44px;
   place-items: center;
   border-radius: var(--radius-card);
-  color: #fff;
-  background: var(--color-primary);
+  color: #f4d089;
+  border: 1px solid rgba(244, 208, 137, 0.2);
+  background: rgba(184, 111, 5, 0.16);
 }
 
 .ritual-item h3 {
@@ -623,7 +635,7 @@ h3 {
 
 .ritual-item p {
   margin-bottom: 0;
-  color: var(--color-secondary);
+  color: rgba(248, 242, 234, 0.78);
   line-height: 1.6;
 }
 
@@ -704,7 +716,9 @@ h3 {
 }
 
 .gallery-section {
-  background: #fff;
+  background:
+    linear-gradient(180deg, #100b09, #080605 88%),
+    var(--color-background);
 }
 
 .gallery-grid {
@@ -716,6 +730,7 @@ h3 {
 
 .gallery-item {
   overflow: hidden;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
 }
@@ -737,8 +752,8 @@ h3 {
 
 .visit-section {
   background:
-    linear-gradient(135deg, rgba(111, 38, 61, 0.1), transparent 42%),
-    linear-gradient(45deg, rgba(70, 103, 92, 0.12), transparent 38%),
+    linear-gradient(135deg, rgba(229, 161, 180, 0.1), transparent 42%),
+    linear-gradient(45deg, rgba(111, 146, 127, 0.14), transparent 38%),
     var(--color-background);
 }
 
@@ -751,7 +766,7 @@ h3 {
 
 .visit-copy p:not(.eyebrow) {
   max-width: 560px;
-  color: var(--color-secondary);
+  color: rgba(248, 242, 234, 0.82);
   font-size: 1.08rem;
   line-height: 1.75;
 }
@@ -768,17 +783,21 @@ h3 {
   align-content: end;
   gap: 8px;
   padding: 18px;
-  border: 1px solid rgba(28, 25, 23, 0.08);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
-  color: var(--color-primary);
-  background: rgba(255, 255, 255, 0.78);
+  color: var(--color-foreground);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035)),
+    rgba(18, 13, 10, 0.92);
   box-shadow: var(--shadow-card);
   transition: transform 180ms ease, background 180ms ease;
 }
 
 .info-card:hover {
   transform: translateY(-4px);
-  background: #fff;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.055)),
+    rgba(25, 18, 14, 0.96);
 }
 
 .info-card svg {
@@ -786,7 +805,7 @@ h3 {
 }
 
 .info-card span {
-  color: var(--color-secondary);
+  color: rgba(248, 242, 234, 0.72);
   font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -804,7 +823,8 @@ h3 {
   gap: 16px;
   padding: 24px;
   color: rgba(255, 255, 255, 0.82);
-  background: var(--color-primary);
+  border-top: 1px solid var(--color-border);
+  background: #070504;
 }
 
 .site-footer span:first-child {
